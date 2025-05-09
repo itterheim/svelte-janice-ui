@@ -22,7 +22,7 @@
             <NavLink icon="directions_car" label="Car"></NavLink>
         {/snippet}
         {#snippet bottom()}
-            <NavLink href="#user" icon="person" label="user"></NavLink>
+            <NavLink icon="person" label="user"></NavLink>
         {/snippet}
     </Nav>
     <Main>
