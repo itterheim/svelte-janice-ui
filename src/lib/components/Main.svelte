@@ -15,11 +15,10 @@
 <style>
     main {
         flex: 1;
-        background: var(--crust);
+        background: var(--mantle);
         border-radius: 20px 0 0 20px;
 
         flex: 1;
-        background-color: var(--mantle);
         color: var(--text);
         overflow: auto;
         box-shadow: var(--shadow);

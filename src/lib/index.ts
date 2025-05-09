@@ -8,3 +8,4 @@ export { default as Main } from "./components/Main.svelte";
 export { default as Nav } from "./components/Nav.svelte";
 export { default as NavLink } from "./components/NavLink.svelte";
 export { default as Wrapper } from "./components/Wrapper.svelte";
+export { default as Table } from "./components/Table.svelte";

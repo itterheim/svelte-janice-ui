@@ -1,5 +1,6 @@
 type $$ComponentProps = {
     title?: string;
+    padding?: boolean;
     children: () => any;
     actions?: () => any;
 };

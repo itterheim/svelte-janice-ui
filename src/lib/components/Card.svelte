@@ -2,9 +2,11 @@
     let {
         title,
         children,
+        padding,
         actions
     }: {
         title?: string;
+        padding?: boolean;
         children: () => any;
         actions?: () => any;
     } = $props();
@@ -19,14 +21,14 @@
             </div>
         </div>
     {/if}
-    <div class="content">
+    <div class="content" class:padding>
         {@render children()}
     </div>
 </div>
 
 <style>
     div.card {
-        border: 1px solid #0003;
+        border: 1px solid var(--border-color);
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 1px 1px 3px 0px #0002;
@@ -38,7 +40,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #0003;
+        border-bottom: 1px solid var(--border-color);
     }
 
     div.title {
@@ -53,7 +55,7 @@
         padding: 0 10px;
     }
 
-    div.content {
+    div.content.padding {
         padding: 10px;
     }
 </style>

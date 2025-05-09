@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { theme } from "$lib/stores/ui.js";
+
     let {
         children
     }: {
@@ -6,7 +8,7 @@
     } = $props();
 </script>
 
-<div class="layout latte">
+<div class="layout {$theme}">
     {@render children()}
 </div>
 

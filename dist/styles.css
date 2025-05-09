@@ -52,6 +52,7 @@ body {
     --base-dark: #24273a;
     --text-light: #cad3f5;
     --shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    --border-color: #0003;
 }
 
 .macchiato {
@@ -82,6 +83,9 @@ body {
     --mantle: #1e2030;
     --crust: #181926;
 
-    --primary: var(--blue);
+    --primary: var(--teal);
+    --base-dark: var(--crust);
+    --text-light: #cad3f5;
     --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    --border-color: var(--crust);
 }
