@@ -7,13 +7,14 @@
     import Nav from "$lib/components/Nav.svelte";
     import NavLink from "$lib/components/NavLink.svelte";
     import Wrapper from "$lib/components/Wrapper.svelte";
+    import { base } from "$app/paths";
     import "$lib/styles.css";
 </script>
 
 <Layout>
     <Nav>
         {#snippet top()}
-            <NavLink href="/" icon="planet"></NavLink>
+            <NavLink href="{base}/" icon="planet"></NavLink>
         {/snippet}
         {#snippet middle()}
             <NavLink icon="stacked_email" label="Messages"></NavLink>
