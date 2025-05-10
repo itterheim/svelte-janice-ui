@@ -15,7 +15,9 @@
 </script>
 
 <div class="input">
-    <label for={name}>{label}</label>
+    {#if label}
+        <label for={name}>{label}</label>
+    {/if}
     <input type="text" id={name} {name} {placeholder} bind:value {disabled} />
 </div>
 

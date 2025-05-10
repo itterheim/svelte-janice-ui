@@ -4,6 +4,7 @@ type $$ComponentProps = {
     label?: string;
     placeholder?: string;
     disabled?: boolean;
+    children: () => any;
 };
 declare const Select: import("svelte").Component<$$ComponentProps, {}, "value">;
 type Select = ReturnType<typeof Select>;

@@ -3,24 +3,24 @@
         name,
         label,
         disabled,
-        value = $bindable()
+        value = $bindable(),
+        children
     }: {
         name: string;
         value?: string;
         label?: string;
         placeholder?: string;
         disabled?: boolean;
+        children: () => any;
     } = $props();
 </script>
 
 <div class="input">
-    <label for={name}>{label}</label>
+    {#if label}
+        <label for={name}>{label}</label>
+    {/if}
     <select id={name} {name} bind:value {disabled}>
-        <option value=""></option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-        <option value="4">Option 4</option>
+        {@render children()}
     </select>
 </div>
 
