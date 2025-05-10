@@ -19,7 +19,7 @@
     .layout {
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
         overflow: hidden;
         box-sizing: border-box;
