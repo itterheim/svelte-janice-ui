@@ -1,7 +1,7 @@
 {
     "name": "Svelte Janice UI",
     "short_name": "JaniceUI",
-    "start_url": "/",
+    "start_url": "/svelte-janice-ui/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#6200ee",
