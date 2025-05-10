@@ -3,6 +3,7 @@ type $$ComponentProps = {
     padding?: boolean;
     children: () => any;
     actions?: () => any;
+    buttons?: () => any;
 };
 declare const Card: import("svelte").Component<$$ComponentProps, {}, "">;
 type Card = ReturnType<typeof Card>;

@@ -2,21 +2,26 @@
     let {
         name,
         label,
-        placeholder,
         disabled,
         value = $bindable()
     }: {
         name: string;
         value?: string;
         label?: string;
-        disabled?: boolean;
         placeholder?: string;
+        disabled?: boolean;
     } = $props();
 </script>
 
 <div class="input">
     <label for={name}>{label}</label>
-    <input type="text" id={name} {name} {placeholder} bind:value {disabled} />
+    <select id={name} {name} bind:value {disabled}>
+        <option value=""></option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+    </select>
 </div>
 
 <style>
@@ -31,7 +36,7 @@
         /* padding-left: 10px; */
     }
 
-    input {
+    select {
         font-size: var(--font-size);
         padding: 10px;
         border-radius: 5px;
@@ -40,7 +45,7 @@
         color: var(--text);
     }
 
-    input:disabled {
+    select:disabled {
         background-color: var(--crust);
         border-color: transparent;
         cursor: not-allowed;

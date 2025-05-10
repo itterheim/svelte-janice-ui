@@ -11,3 +11,4 @@ export { default as Table } from "./components/Table.svelte";
 export { default as Row } from "./components/Row.svelte";
 export { default as Input } from "./components/Input.svelte";
 export { default as Button } from "./components/Button.svelte";
+export { default as Select } from "./components/Select.svelte";

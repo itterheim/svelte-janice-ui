@@ -1,4 +1,5 @@
 type $$ComponentProps = {
+    margin?: boolean;
     children: () => any;
 };
 declare const Row: import("svelte").Component<$$ComponentProps, {}, "">;

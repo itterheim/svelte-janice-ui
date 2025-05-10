@@ -1,8 +1,14 @@
 <script lang="ts">
-    let { children }: { children: () => any } = $props();
+    let {
+        margin,
+        children
+    }: {
+        margin?: boolean;
+        children: () => any;
+    } = $props();
 </script>
 
-<div class="row">
+<div class="row" class:margin>
     {@render children()}
 </div>
 
@@ -15,6 +21,10 @@
 
     .row :global(> *) {
         flex: 1;
+    }
+
+    .margin {
+        margin: 0 0 10px 0;
     }
 
     @media (max-width: 800px) {

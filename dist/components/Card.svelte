@@ -3,12 +3,14 @@
         title,
         children,
         padding,
-        actions
+        actions,
+        buttons
     }: {
         title?: string;
         padding?: boolean;
         children: () => any;
         actions?: () => any;
+        buttons?: () => any;
     } = $props();
 </script>
 
@@ -24,6 +26,11 @@
     <div class="content" class:padding>
         {@render children()}
     </div>
+    {#if buttons}
+        <div class="buttons">
+            {@render buttons()}
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -58,5 +65,15 @@
 
     div.content.padding {
         padding: 10px;
+    }
+
+    div.buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        border-top: 1px solid var(--border-color);
+        padding: 10px;
+        gap: 10px;
     }
 </style>
