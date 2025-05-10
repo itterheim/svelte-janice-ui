@@ -8,6 +8,7 @@
     import Input from "$lib/components/Input.svelte";
     import Row from "$lib/components/Row.svelte";
     import Button from "$lib/components/Button.svelte";
+    import Select from "$lib/components/Select.svelte";
 </script>
 
 <Wrapper>
@@ -23,26 +24,22 @@
             <IconButton icon="delete" small />
         {/snippet}
 
-        <Row>
-            <Input name="input1" label="Input" value="Value" placeholder="Placeholder"></Input>
+        <Row margin>
+            <Input name="input1" label="Input" value="Value" placeholder="Placeholder" disabled
+            ></Input>
             <Input name="input2" label="Input" value="Value" placeholder="Placeholder"></Input>
         </Row>
 
-        <div>
+        <Row>
+            <Select name="select1" label="Select"></Select>
+            <Select name="select1" label="Select" disabled></Select>
+        </Row>
+
+        {#snippet buttons()}
             <Button label="Button" />
             <Button label="Action" action small />
             <Button label="Action" action />
             <Button label="Danger" danger />
-        </div>
+        {/snippet}
     </Card>
 </Wrapper>
-
-<style>
-    div {
-        display: flex;
-        gap: 10px;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 10px;
-    }
-</style>
