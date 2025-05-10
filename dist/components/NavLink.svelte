@@ -77,7 +77,7 @@
         color: var(--base);
         padding: 0 20px 0 64px;
         border-radius: 50px;
-        font-size: 16px;
+        font-size: var(--font-size-larger);
         font-weight: 600;
         display: flex;
         align-items: center;

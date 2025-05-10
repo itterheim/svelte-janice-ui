@@ -34,16 +34,12 @@
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
-        background-color: var(--mantle);
         font-weight: 600;
-    }
-
-    :global(.macchiato) table :global(th) {
-        background-color: var(--base);
     }
 
     table :global(td) {
         padding: 10px;
+        border-bottom: 1px solid var(--border-color);
     }
 
     table tfoot {

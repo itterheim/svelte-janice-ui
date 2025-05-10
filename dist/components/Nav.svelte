@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from "$app/state";
+    // import { page } from "$app/state";
     import { theme, showMenu } from "../stores/ui.js";
     import NavLink from "./NavLink.svelte";
 
@@ -24,7 +24,7 @@
         expanded = !expanded;
     }
 
-    let navPage = $derived.by(() => page.url.pathname.split("/")[1]);
+    // let navPage = $derived.by(() => page.url.pathname.split("/")[1]);
 </script>
 
 <nav class:visible={$showMenu} class:hidden={!$showMenu} class:expanded>

@@ -2,22 +2,29 @@
     import Icon from "./Icon.svelte";
 
     let {
+        submit,
+        label,
         icon,
+        onclick,
         action,
         danger,
-        small,
-        onclick
+        small
     }: {
-        icon: string;
+        submit?: boolean;
+        label: string;
+        icon?: string;
+        onclick?: () => void;
         action?: boolean;
         danger?: boolean;
         small?: boolean;
-        onclick?: () => void;
     } = $props();
 </script>
 
-<button {onclick} class:action class:danger class:small>
-    <Icon {icon} {small}></Icon>
+<button type={submit ? "submit" : "button"} class:action class:danger class:small {onclick}>
+    {#if icon}
+        <Icon {icon} />
+    {/if}
+    {label}
 </button>
 
 <style>
@@ -28,9 +35,14 @@
         margin: 0;
         cursor: pointer;
 
-        width: 40px;
+        /* width: 40px; */
         height: 40px;
-        border-radius: 50%;
+        border-radius: 5px;
+        padding: 0 14px;
+        font-size: var(--font-size);
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,11 +50,13 @@
         color: inherit;
 
         transition: ease-in-out 0.2s background-color;
+        border: 1px solid var(--border-color);
     }
 
     button.small {
-        width: 28px;
+        /* width: 28px; */
         height: 28px;
+        padding: 0 10px;
     }
 
     button:hover {
@@ -54,6 +68,7 @@
         color: var(--base);
         transition: ease-in-out 0.2s filter;
         box-shadow: 1px 1px 3px 0px #0002;
+        border: 1px solid transparent;
     }
 
     button.danger {
@@ -61,6 +76,8 @@
         color: var(--base);
         transition: ease-in-out 0.2s filter;
         box-shadow: 1px 1px 3px 0px #0002;
+        font-weight: 700;
+        border: 1px solid transparent;
     }
 
     button.action:hover,

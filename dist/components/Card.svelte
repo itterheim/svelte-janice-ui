@@ -46,6 +46,7 @@
     div.title {
         padding: 10px;
         font-weight: 600;
+        font-size: var(--font-size-larger);
     }
 
     div.actions {
