@@ -1,0 +1,1 @@
+import{t as o,a as m}from"./BJxn4AiF.js";import{B as l,C as n,z as p}from"./D2Eh2KrS.js";import{s as c,a as d}from"./BqfpMoXI.js";var v=o("<div><!></div>");function h(t,e){var a=v();let s;var r=l(a);c(r,()=>e.children),n(a),p(i=>s=d(a,1,"row svelte-wmaicq",null,s,i),[()=>({margin:e.margin})]),m(t,a)}export{h as R};
