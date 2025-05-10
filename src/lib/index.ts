@@ -1,4 +1,3 @@
-// Reexport your entry components here
 export { default as Card } from "./components/Card.svelte";
 export { default as Header } from "./components/Header.svelte";
 export { default as Icon } from "./components/Icon.svelte";
@@ -9,3 +8,6 @@ export { default as Nav } from "./components/Nav.svelte";
 export { default as NavLink } from "./components/NavLink.svelte";
 export { default as Wrapper } from "./components/Wrapper.svelte";
 export { default as Table } from "./components/Table.svelte";
+export { default as Row } from "./components/Row.svelte";
+export { default as Input } from "./components/Input.svelte";
+export { default as Button } from "./components/Button.svelte";

@@ -49,7 +49,7 @@
     }
 
     div.left div.title {
-        font-size: 20px;
+        font-size: var(--font-size-large);
         font-weight: 600;
         padding-left: 10px;
     }

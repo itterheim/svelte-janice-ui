@@ -1,11 +1,14 @@
 <script lang="ts">
-    import { theme } from "$lib/stores/ui.js";
+    import { theme, type Theme } from "$lib/stores/ui.js";
+    import { onMount } from "svelte";
 
     let {
         children
     }: {
         children: () => any;
     } = $props();
+
+    onMount(() => {});
 </script>
 
 <div class="layout {$theme}">
