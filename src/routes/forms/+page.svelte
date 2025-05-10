@@ -31,8 +31,19 @@
         </Row>
 
         <Row>
-            <Select name="select1" label="Select"></Select>
-            <Select name="select1" label="Select" disabled></Select>
+            <Select name="select1" label="Select">
+                <option value=""></option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            </Select>
+            <Select name="select1" label="Select" disabled>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            </Select>
         </Row>
 
         {#snippet buttons()}
