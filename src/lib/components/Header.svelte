@@ -72,7 +72,7 @@
     }
 
     @media (max-width: 800px) {
-        div.left :global(> :first-child) {
+        div.left.default :global(> :first-child) {
             display: block;
         }
     }
