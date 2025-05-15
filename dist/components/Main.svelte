@@ -28,6 +28,7 @@
     @media (max-width: 800px) {
         main {
             border-radius: 0;
+            padding: 0 10px 10px 10px;
         }
 
         main.rounded {
