@@ -22,7 +22,7 @@
         color: var(--text);
         overflow: auto;
         box-shadow: var(--shadow);
-        padding: 0 20px;
+        padding: 0 20px 20px 20px;
     }
 
     @media (max-width: 800px) {
