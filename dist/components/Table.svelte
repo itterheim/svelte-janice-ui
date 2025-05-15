@@ -30,7 +30,7 @@
         cursor: pointer;
     }
 
-    table.janice-table :global(> tbody > tr > th) {
+    table.janice-table :global(> thead > tr > th) {
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
