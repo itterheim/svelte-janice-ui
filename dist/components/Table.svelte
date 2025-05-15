@@ -8,7 +8,7 @@
     } = $props();
 </script>
 
-<table>
+<table class="janice-table">
     {@render children()}
     {#if pagination}
         <tfoot>
@@ -20,29 +20,29 @@
 </table>
 
 <style>
-    table {
+    table.janice-table {
         width: 100%;
         border-collapse: collapse;
     }
 
-    table :global(thead),
-    table :global(tbody) {
+    table.janice-table :global(thead),
+    table.janice-table :global(tbody) {
         cursor: pointer;
     }
 
-    table :global(> tbody th) {
+    table.janice-table :global(> tbody th) {
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
         font-weight: 600;
     }
 
-    table :global(> tbody td) {
+    table.janice-table :global(> tbody td) {
         padding: 10px;
         border-bottom: 1px solid var(--border-color);
     }
 
-    table tfoot {
+    table.janice-table tfoot {
         border-top: 1px solid var(--border-color);
     }
 </style>
