@@ -30,14 +30,14 @@
         cursor: pointer;
     }
 
-    table :global(th) {
+    table :global(> tbody th) {
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
         font-weight: 600;
     }
 
-    table :global(td) {
+    table :global(> tbody td) {
         padding: 10px;
         border-bottom: 1px solid var(--border-color);
     }
