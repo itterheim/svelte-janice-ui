@@ -4,20 +4,30 @@
 
     let {
         title,
+        back,
         children
     }: {
         title: string;
+        back?: boolean;
         children?: () => any;
     } = $props();
 
     function toggleSidebar() {
         $showMenu = !$showMenu;
     }
+
+    function goBack() {
+        window.history.back();
+    }
 </script>
 
 <header>
-    <div class="left">
-        <IconButton icon="menu" onclick={toggleSidebar}></IconButton>
+    <div class="left" class:default={!back}>
+        {#if back}
+            <IconButton icon="arrow_back" onclick={goBack}></IconButton>
+        {:else}
+            <IconButton icon="menu" onclick={toggleSidebar}></IconButton>
+        {/if}
         <div class="title">
             {title}
         </div>
@@ -43,7 +53,7 @@
         align-items: center;
     }
 
-    div.left :global(> :first-child) {
+    div.left.default :global(> :first-child) {
         display: none;
         /* margin-right: 10px; */
     }

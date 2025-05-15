@@ -10,7 +10,7 @@
 </script>
 
 <Wrapper>
-    <Header title="Tables">
+    <Header title="Tables" back>
         <IconButton icon="add" action />
         <IconButton icon="delete" danger />
     </Header>

@@ -1,5 +1,6 @@
 type $$ComponentProps = {
     title: string;
+    back?: boolean;
     children?: () => any;
 };
 declare const Header: import("svelte").Component<$$ComponentProps, {}, "">;
