@@ -6,17 +6,19 @@
         action,
         danger,
         small,
+        grey,
         onclick
     }: {
         icon: string;
         action?: boolean;
         danger?: boolean;
         small?: boolean;
+        grey?: boolean;
         onclick?: () => void;
     } = $props();
 </script>
 
-<button {onclick} class:action class:danger class:small>
+<button {onclick} class:grey class:action class:danger class:small>
     <Icon {icon} {small}></Icon>
 </button>
 
@@ -47,6 +49,10 @@
 
     button:hover {
         background-color: #0001;
+    }
+
+    button.grey {
+        background-color: var(--mantle);
     }
 
     button.action {

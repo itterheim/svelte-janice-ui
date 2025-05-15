@@ -9,6 +9,7 @@
     import Row from "$lib/components/Row.svelte";
     import Button from "$lib/components/Button.svelte";
     import Select from "$lib/components/Select.svelte";
+    import NumberInput from "$lib/components/NumberInput.svelte";
 </script>
 
 <Wrapper>
@@ -28,6 +29,11 @@
             <Input name="input1" label="Input" value="Value" placeholder="Placeholder" disabled
             ></Input>
             <Input name="input2" label="Input" value="Value" placeholder="Placeholder"></Input>
+        </Row>
+
+        <Row>
+            <NumberInput name="number"></NumberInput>
+            <NumberInput name="number" step={1} min={0} max={100} value={90}></NumberInput>
         </Row>
 
         <Row>
