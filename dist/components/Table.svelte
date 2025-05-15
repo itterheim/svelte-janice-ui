@@ -30,14 +30,14 @@
         cursor: pointer;
     }
 
-    table.janice-table :global(> tbody th) {
+    table.janice-table :global(> tbody > tr > th) {
         padding: 10px;
         text-align: left;
         border-bottom: 1px solid var(--border-color);
         font-weight: 600;
     }
 
-    table.janice-table :global(> tbody td) {
+    table.janice-table :global(> tbody > tr > td) {
         padding: 10px;
         border-bottom: 1px solid var(--border-color);
     }
