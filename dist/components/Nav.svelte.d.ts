@@ -1,5 +1,6 @@
 type $$ComponentProps = {
     expandable?: boolean;
+    changetheme?: boolean;
     top?: () => any;
     middle?: () => any;
     bottom?: () => any;
