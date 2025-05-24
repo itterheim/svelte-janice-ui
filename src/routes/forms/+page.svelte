@@ -10,6 +10,9 @@
     import Button from "$lib/components/Button.svelte";
     import Select from "$lib/components/Select.svelte";
     import NumberInput from "$lib/components/NumberInput.svelte";
+    import DateInput from "$lib/components/DateInput.svelte";
+
+    let date = $state(new Date().toISOString());
 </script>
 
 <Wrapper>
@@ -34,6 +37,7 @@
         <Row margin>
             <Input name="input3" label="Input" value="Value" placeholder="Placeholder" password
             ></Input>
+            <DateInput name="input4" label="Date input" bind:value={date}></DateInput>
         </Row>
 
         <Row>
