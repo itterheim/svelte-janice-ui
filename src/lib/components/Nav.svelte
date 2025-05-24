@@ -5,11 +5,13 @@
 
     let {
         expandable,
+        changetheme,
         top,
         middle,
         bottom
     }: {
         expandable?: boolean;
+        changetheme?: boolean;
         top?: () => any;
         middle?: () => any;
         bottom?: () => any;
@@ -40,13 +42,15 @@
     </div>
 
     <div class="bottom">
-        <!-- svelte-ignore a11y_invalid_attribute -->
-        <NavLink
-            href="javascript:;"
-            onclick={changeTheme}
-            label="Theme"
-            icon={$theme == "latte" ? "dark_mode" : "light_mode"}
-        ></NavLink>
+        {#if changetheme}
+            <!-- svelte-ignore a11y_invalid_attribute -->
+            <NavLink
+                href="javascript:;"
+                onclick={changeTheme}
+                label="Theme"
+                icon={$theme == "latte" ? "dark_mode" : "light_mode"}
+            ></NavLink>
+        {/if}
         {@render bottom?.()}
     </div>
 </nav>
