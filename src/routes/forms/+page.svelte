@@ -31,6 +31,11 @@
             <Input name="input2" label="Input" value="Value" placeholder="Placeholder"></Input>
         </Row>
 
+        <Row margin>
+            <Input name="input3" label="Input" value="Value" placeholder="Placeholder" password
+            ></Input>
+        </Row>
+
         <Row>
             <NumberInput name="number"></NumberInput>
             <NumberInput name="number" step={1} min={0} max={100} value={90}></NumberInput>

@@ -4,12 +4,14 @@
         label,
         placeholder,
         disabled,
+        password,
         value = $bindable()
     }: {
         name: string;
         value?: string;
         label?: string;
         disabled?: boolean;
+        password?: boolean;
         placeholder?: string;
     } = $props();
 </script>
@@ -18,7 +20,14 @@
     {#if label}
         <label for={name}>{label}</label>
     {/if}
-    <input type="text" id={name} {name} {placeholder} bind:value {disabled} />
+    <input
+        type={password ? "password" : "text"}
+        id={name}
+        {name}
+        {placeholder}
+        bind:value
+        {disabled}
+    />
 </div>
 
 <style>

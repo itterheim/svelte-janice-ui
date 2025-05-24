@@ -3,6 +3,7 @@ type $$ComponentProps = {
     value?: string;
     label?: string;
     disabled?: boolean;
+    password?: boolean;
     placeholder?: string;
 };
 declare const Input: import("svelte").Component<$$ComponentProps, {}, "value">;
