@@ -7,6 +7,7 @@
         danger,
         small,
         grey,
+        title,
         onclick
     }: {
         icon: string;
@@ -14,11 +15,12 @@
         danger?: boolean;
         small?: boolean;
         grey?: boolean;
+        title?: string;
         onclick?: () => void;
     } = $props();
 </script>
 
-<button {onclick} class:grey class:action class:danger class:small>
+<button {title} {onclick} class:grey class:action class:danger class:small>
     <Icon {icon} {small}></Icon>
 </button>
 

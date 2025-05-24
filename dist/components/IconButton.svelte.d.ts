@@ -4,6 +4,7 @@ type $$ComponentProps = {
     danger?: boolean;
     small?: boolean;
     grey?: boolean;
+    title?: string;
     onclick?: () => void;
 };
 declare const IconButton: import("svelte").Component<$$ComponentProps, {}, "">;
