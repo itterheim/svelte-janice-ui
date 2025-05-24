@@ -4,6 +4,7 @@
         label,
         disabled,
         value = $bindable(),
+        onchange,
         children
     }: {
         name: string;
@@ -11,6 +12,7 @@
         label?: string;
         placeholder?: string;
         disabled?: boolean;
+        onchange?: () => void;
         children: () => any;
     } = $props();
 </script>
@@ -19,7 +21,7 @@
     {#if label}
         <label for={name}>{label}</label>
     {/if}
-    <select id={name} {name} bind:value {disabled}>
+    <select id={name} {name} bind:value {disabled} {onchange}>
         {@render children()}
     </select>
 </div>
