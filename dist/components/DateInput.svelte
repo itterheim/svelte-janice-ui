@@ -27,7 +27,7 @@
         if (!v) return;
 
         const result = new Date(v);
-        result.setHours(0, 0, 0, 0);
+        result.setHours(12, 0, 0, 0);
 
         value = result.toISOString();
     }
