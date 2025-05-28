@@ -11,6 +11,7 @@
     import Select from "$lib/components/Select.svelte";
     import NumberInput from "$lib/components/NumberInput.svelte";
     import DateInput from "$lib/components/DateInput.svelte";
+    import DateTimeInput from "$lib/components/DateTimeInput.svelte";
 
     let date = $state(new Date().toISOString());
 </script>
@@ -32,12 +33,18 @@
             <Input name="input1" label="Input" value="Value" placeholder="Placeholder" disabled
             ></Input>
             <Input name="input2" label="Input" value="Value" placeholder="Placeholder"></Input>
+            <Input
+                name="input-pass"
+                label="Password"
+                value="Value"
+                placeholder="Placeholder"
+                password
+            ></Input>
         </Row>
 
         <Row margin>
-            <Input name="input3" label="Input" value="Value" placeholder="Placeholder" password
-            ></Input>
-            <DateInput name="input4" label="Date input" bind:value={date}></DateInput>
+            <DateInput name="input3" label="Date" bind:value={date}></DateInput>
+            <DateTimeInput name="input4" label="Datetime local" bind:value={date}></DateTimeInput>
         </Row>
 
         <Row>

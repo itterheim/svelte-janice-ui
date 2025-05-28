@@ -102,9 +102,9 @@
         cursor: not-allowed;
     }
 
-    input.invalid {
+    /* input.invalid {
         border-color: var(--red);
-    }
+    } */
 
     /* Chrome, Safari, Edge, Opera */
     input::-webkit-outer-spin-button,
