@@ -37,7 +37,6 @@
 
     label {
         font-weight: 600;
-        /* padding-left: 10px; */
     }
 
     select {
