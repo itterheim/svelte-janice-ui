@@ -1,12 +1,18 @@
-<script>
-    import "$lib/styles.css";
-
+<script lang="ts">
     import Card from "$lib/components/Card.svelte";
     import Header from "$lib/components/Header.svelte";
     import IconButton from "$lib/components/IconButton.svelte";
     import Wrapper from "$lib/components/Wrapper.svelte";
     import Table from "$lib/components/Table.svelte";
     import Icon from "$lib/components/Icon.svelte";
+    import Input from "$lib/components/Input.svelte";
+    import Select from "$lib/components/Select.svelte";
+    import Row from "$lib/components/Row.svelte";
+    import type { PageProps } from "./$types.js";
+
+    let { data }: PageProps = $props();
+
+    $inspect(data);
 </script>
 
 <Wrapper>
@@ -19,6 +25,15 @@
         {#snippet actions()}
             <IconButton icon="filter_alt" small />
         {/snippet}
+
+        <Row padding>
+            <div></div>
+            <Select name="select" placeholder="Select an option">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </Select>
+        </Row>
 
         <Table>
             <thead>

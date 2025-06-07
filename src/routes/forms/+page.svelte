@@ -22,6 +22,14 @@
         <IconButton icon="delete" danger />
     </Header>
 
+    <div class="filter">
+        <Row margin padding>
+            <Input name="input1" label="Value" placeholder="Placeholder"></Input>
+            <div></div>
+            <div></div>
+        </Row>
+    </div>
+
     <Card title="Card" padding>
         {#snippet actions()}
             <IconButton icon="more_vert" small />
@@ -38,7 +46,7 @@
                 label="Password"
                 value="Value"
                 placeholder="Placeholder"
-                password
+                type="password"
             ></Input>
         </Row>
 

@@ -37,6 +37,7 @@
 
     label {
         font-weight: 600;
+        color: var(--text);
     }
 
     select {
@@ -44,13 +45,14 @@
         padding: 10px;
         border-radius: 5px;
         border: 1px solid var(--border-color);
-        background-color: var(--mantle);
+        background-color: var(--base);
         color: var(--text);
     }
 
     select:disabled {
         background-color: var(--crust);
-        border-color: transparent;
+        /* border-color: transparent; */
+        opacity: 0.75;
         cursor: not-allowed;
     }
 </style>

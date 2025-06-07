@@ -8,6 +8,9 @@
 
     import { base } from "$app/paths";
     import { page } from "$app/state";
+    import { setContext } from "svelte";
+
+    setContext("client", "my client");
 
     let {
         children
