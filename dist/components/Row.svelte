@@ -1,14 +1,16 @@
 <script lang="ts">
     let {
         margin,
+        padding,
         children
     }: {
         margin?: boolean;
+        padding?: boolean;
         children: () => any;
     } = $props();
 </script>
 
-<div class="row" class:margin>
+<div class="row" class:margin class:padding>
     {@render children()}
 </div>
 
@@ -25,6 +27,10 @@
 
     .margin {
         margin: 0 0 10px 0;
+    }
+
+    .padding {
+        padding: 10px;
     }
 
     @media (max-width: 800px) {

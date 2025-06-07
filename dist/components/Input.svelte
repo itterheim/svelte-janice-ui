@@ -1,18 +1,30 @@
 <script lang="ts">
+    import type { HTMLInputTypeAttribute } from "svelte/elements";
+
     let {
         name,
         label,
         placeholder,
         disabled,
-        password,
-        value = $bindable()
+        type,
+        value = $bindable(),
+        min,
+        max,
+        step,
+        left,
+        right
     }: {
         name: string;
-        value?: string;
+        value?: string | number;
         label?: string;
         disabled?: boolean;
-        password?: boolean;
         placeholder?: string;
+        type?: HTMLInputTypeAttribute;
+        min?: number;
+        max?: number;
+        step?: number;
+        left?: () => any;
+        right?: () => any;
     } = $props();
 </script>
 
@@ -20,14 +32,21 @@
     {#if label}
         <label for={name}>{label}</label>
     {/if}
-    <input
-        type={password ? "password" : "text"}
-        id={name}
-        {name}
-        {placeholder}
-        bind:value
-        {disabled}
-    />
+    <div class="field">
+        {@render left?.()}
+        <input
+            id={name}
+            type={type || "text"}
+            {min}
+            {max}
+            {step}
+            {name}
+            {placeholder}
+            bind:value
+            {disabled}
+        />
+        {@render right?.()}
+    </div>
 </div>
 
 <style>
@@ -37,8 +56,19 @@
         gap: 5px;
     }
 
+    .field {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .field input {
+        flex: 1;
+    }
+
     label {
         font-weight: 600;
+        color: var(--text);
         /* padding-left: 10px; */
     }
 
@@ -47,13 +77,15 @@
         padding: 10px;
         border-radius: 5px;
         border: 1px solid var(--border-color);
-        background-color: var(--mantle);
+        background-color: var(--base);
         color: var(--text);
     }
 
     input:disabled {
         background-color: var(--crust);
-        border-color: transparent;
+        /* background-color: var(--mantle); */
+        opacity: 0.75;
+        /* border-color: transparent; */
         cursor: not-allowed;
     }
 </style>

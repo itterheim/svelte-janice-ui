@@ -15,3 +15,4 @@ export { default as Select } from "./components/Select.svelte";
 export { default as NumberInput } from "./components/NumberInput.svelte";
 export { default as DateInput } from "./components/DateInput.svelte";
 export { default as DateTimeInput } from "./components/DateTimeInput.svelte";
+export { default as Loader } from "./components/Loader.svelte";

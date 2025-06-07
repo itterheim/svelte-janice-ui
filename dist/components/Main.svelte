@@ -14,6 +14,7 @@
 
 <style>
     main {
+        position: relative;
         flex: 1;
         background: var(--mantle);
         border-radius: 20px 0 0 20px;
