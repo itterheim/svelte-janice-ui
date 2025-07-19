@@ -5,9 +5,6 @@
     import Header from "$lib/components/Header.svelte";
     import IconButton from "$lib/components/IconButton.svelte";
     import Wrapper from "$lib/components/Wrapper.svelte";
-    import Table from "$lib/components/Table.svelte";
-
-    import Input from "$lib/components/Input.svelte";
     import Row from "$lib/components/Row.svelte";
 </script>
 

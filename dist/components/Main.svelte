@@ -30,6 +30,9 @@
         main {
             border-radius: 0;
             padding: 0 10px 10px 10px;
+
+            min-width: 100%;
+            box-sizing: border-box;
         }
 
         main.rounded {

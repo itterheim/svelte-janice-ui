@@ -9,6 +9,7 @@
     import { base } from "$app/paths";
     import { page } from "$app/state";
     import { setContext } from "svelte";
+    import NavGroup from "$lib/components/NavGroup.svelte";
 
     setContext("client", "my client");
 
@@ -17,12 +18,10 @@
     }: {
         children: () => any;
     } = $props();
-
-    $inspect(page);
 </script>
 
 <Layout>
-    <Nav>
+    <Nav expandable>
         {#snippet top()}
             <NavLink href="{base}/" icon="planet"></NavLink>
         {/snippet}
@@ -45,6 +44,26 @@
                 href="{base}/tables"
                 active={page.route.id === "/tables"}
             ></NavLink>
+            <NavGroup icon="planet" label="Planets" active={page.route.id?.startsWith("/planets")}>
+                <NavLink
+                    icon="planet"
+                    label="Mercury"
+                    href="{base}/planets/mercury"
+                    active={page.url.pathname === "/planets/mercury"}
+                ></NavLink>
+                <NavLink
+                    icon="planet"
+                    label="Venus"
+                    href="{base}/planets/venus"
+                    active={page.url.pathname === "/planets/venus"}
+                ></NavLink>
+                <NavLink
+                    icon="planet"
+                    label="Earth"
+                    href="{base}/planets/earth"
+                    active={page.url.pathname === "/planets/earth"}
+                ></NavLink>
+            </NavGroup>
         {/snippet}
         {#snippet bottom()}
             <NavLink icon="person" label="user"></NavLink>

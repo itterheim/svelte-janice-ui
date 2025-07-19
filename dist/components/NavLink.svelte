@@ -33,7 +33,8 @@
         position: relative;
         display: block;
         text-decoration: none;
-        color: var(--text);
+        color: var(--text-dark);
+        cursor: pointer;
     }
 
     a.gap {
@@ -42,10 +43,9 @@
 
     a .icon {
         position: relative;
-        color: var(--text-light);
+        color: var(--text-dark);
         font-size: 28px;
         padding: 10px;
-        cursor: pointer;
         border-radius: 50%;
         display: block;
         width: 24px;
@@ -63,7 +63,6 @@
 
     a:hover .icon,
     a.active .icon {
-        /* position: relative; */
         background-color: var(--primary);
         color: var(--base);
     }
@@ -73,8 +72,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        background-color: var(--primary);
-        color: var(--base);
+        color: var(--text-dark);
         padding: 0 20px 0 64px;
         border-radius: 50px;
         font-size: var(--font-size-larger);

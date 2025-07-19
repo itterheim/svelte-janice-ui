@@ -32,9 +32,20 @@
 <nav class:visible={$showMenu} class:hidden={!$showMenu} class:expanded>
     <div class="top desktop">
         {#if expandable}
-            <NavLink icon={expanded ? "chevron_left" : "chevron_right"} onclick={expand}></NavLink>
+            <div class="row">
+                {#if expanded}
+                    {@render top?.()}
+                {/if}
+                {#if expanded}
+                    <NavLink icon="chevron_left" onclick={expand}></NavLink>
+                {:else}
+                    <NavLink icon="chevron_right" onclick={expand}></NavLink>
+                {/if}
+                <!-- <NavLink icon={expanded ? "chevron_left" : "chevron_right"} onclick={expand}></NavLink> -->
+            </div>
+        {:else}
+            {@render top?.()}
         {/if}
-        {@render top?.()}
     </div>
 
     <div class="links">
@@ -43,7 +54,6 @@
 
     <div class="bottom">
         {#if changetheme}
-            <!-- svelte-ignore a11y_invalid_attribute -->
             <NavLink
                 href="javascript:;"
                 onclick={changeTheme}
@@ -68,8 +78,17 @@
         min-width: 200px;
     }
 
-    nav div.top :global(> :first-child) {
+    /* nav div.top :global(> :first-child) {
         align-self: flex-end;
+    } */
+    nav div.top div.row :global(> :last-child) {
+        align-self: flex-end;
+    }
+
+    nav div.top div.row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     nav div.top,
@@ -89,76 +108,22 @@
         gap: 10px;
     }
 
+    nav.expanded div.links :global(a .label),
+    nav.expanded div.bottom :global(a .label) {
+        width: 100%;
+        box-sizing: border-box;
+        visibility: visible;
+        opacity: 1;
+    }
+
     @media (max-width: 800px) {
         nav.hidden {
             display: none;
             visibility: hidden;
         }
-
-        /* nav.visible {
-              display: flex;
-              visibility: visible;
-          } */
-
-        /* .desktop {
-              display: none !important;
-          }
-
-          nav {
-              flex-direction: row;
-          }
-
-          nav div.links {
-              flex-direction: row;
-              padding: 5px;
-              gap: 5px;
-              align-items: center;
-          }
-
-          nav div.links a {
-              display: flex;
-              flex-direction: column-reverse;
-              align-items: center;
-              cursor: pointer;
-              border-radius: 10px;
-              flex: 1;
-              gap: 0px;
-          }
-
-          nav div.links a ion-icon {
-              display: block;
-              width: 24px;
-              height: 24px;
-
-              border-radius: 20px;
-              padding: 3px;
-          }
-
-          nav div.links a:hover ion-icon,
-          nav div.links a.active ion-icon {
-              background-color: var(--primary);
-              color: var(--base);
-          }
-
-          nav div.links a:hover div.label,
-          nav div.links a.active div.label {
-              color: var(--primary);
-          }
-
-          nav div.links a div.label {
-              font-weight: 500;
-              font-size: 14px;
-          } */
     }
 
-    /* @media (min-width: 801px) {
-          .mobile {
-              display: none !important;
-          } */
-
-    nav div.links {
+    /* nav div.links {
         justify-content: center;
-    }
-
-    /* } */
+    } */
 </style>

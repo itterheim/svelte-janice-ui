@@ -56,8 +56,14 @@ body {
     --crust: #dce0e8;
 
     --primary: var(--teal);
+    /* --base-dark: #24273a; */
     --base-dark: #24273a;
-    --text-light: #cad3f5;
+    --mantle-dark: #1e2030;
+    --crust-dark: #181926;
+    --text-dark: #cad3f5;
+    --subtext1-dark: #b8c0e0;
+    --subtext0-dark: #a5adcb;
+
     --shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
     --border-color: #0003;
 }

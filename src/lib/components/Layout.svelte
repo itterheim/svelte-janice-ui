@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { theme, type Theme } from "$lib/stores/ui.js";
+    import { theme } from "$lib/stores/ui.js";
     import { onMount } from "svelte";
 
     let {
@@ -23,8 +23,14 @@
         width: 100vw;
         overflow: hidden;
         box-sizing: border-box;
-
-        /* background: var(--crust); */
         background: var(--base-dark);
+    }
+
+    @media (max-width: 800px) {
+        :global(nav.visible + main) {
+            filter: grayscale(1) brightness(0.8);
+            overflow: hidden;
+            pointer-events: none;
+        }
     }
 </style>
