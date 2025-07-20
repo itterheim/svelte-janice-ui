@@ -49,19 +49,19 @@
                     icon="planet"
                     label="Mercury"
                     href="{base}/planets/mercury"
-                    active={page.url.pathname === "/planets/mercury"}
+                    active={page.url.pathname.endsWith("/planets/mercury")}
                 ></NavLink>
                 <NavLink
                     icon="planet"
                     label="Venus"
                     href="{base}/planets/venus"
-                    active={page.url.pathname === "/planets/venus"}
+                    active={page.url.pathname.endsWith("/planets/venus")}
                 ></NavLink>
                 <NavLink
                     icon="planet"
                     label="Earth"
                     href="{base}/planets/earth"
-                    active={page.url.pathname === "/planets/earth"}
+                    active={page.url.pathname.endsWith("/planets/earth")}
                 ></NavLink>
             </NavGroup>
         {/snippet}
