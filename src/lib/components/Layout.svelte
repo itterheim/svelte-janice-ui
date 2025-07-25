@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: row;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         overflow: hidden;
 
         background-color: var(--base-dark);

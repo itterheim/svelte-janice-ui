@@ -10,9 +10,11 @@
         Circle,
         CircleDashed,
         CircleSlash2,
+        Expand,
         History,
         LayoutDashboard,
         Lock,
+        Minimize,
         Orbit,
         Table2,
         TextCursorInput,
@@ -21,6 +23,7 @@
     } from "@lucide/svelte";
     import NavGroupLink from "$lib/components/NavGroupLink.svelte";
     import NavDivider from "$lib/components/NavDivider.svelte";
+    import { browser } from "$app/environment";
     setContext("client", "my client");
 
     let {
@@ -28,6 +31,21 @@
     }: {
         children: () => any;
     } = $props();
+
+    let fullscreen = $state(false);
+    if (browser) {
+        document.onfullscreenchange = () => {
+            fullscreen = !!document.fullscreenElement;
+        };
+    }
+
+    function toggleFullscreen() {
+        if (fullscreen) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    }
 </script>
 
 <Layout>
@@ -83,6 +101,12 @@
             <NavLink Icon={Lock} label="Lock"></NavLink>
         {/snippet}
         {#snippet bottom()}
+            {#if fullscreen}
+                <NavLink Icon={Minimize} label="Exit fullscreen" onclick={toggleFullscreen}
+                ></NavLink>
+            {:else}
+                <NavLink Icon={Expand} label="Fullscreen" onclick={toggleFullscreen}></NavLink>
+            {/if}
             <NavLink Icon={User} label="user"></NavLink>
         {/snippet}
     </Nav>
