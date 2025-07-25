@@ -1,0 +1,1 @@
+.input.svelte-bl0rau{display:flex;flex-direction:column;gap:5px}label.svelte-bl0rau{font-weight:600;color:var(--text)}select.svelte-bl0rau{font-size:var(--font-size);padding:10px;border-radius:5px;border:1px solid var(--border-color);background-color:var(--base);color:var(--text)}select.svelte-bl0rau:disabled{background-color:var(--crust);opacity:.75;cursor:not-allowed}
