@@ -30,3 +30,9 @@ package.json
 ```js
 import { ... } from "svelte-janice-ui";
 ```
+
+Lucide icons (https://lucide.dev/guide/packages/lucide-svelte)
+
+```bash
+pnpm add @lucide/svelte
+```
