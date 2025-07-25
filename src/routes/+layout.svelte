@@ -1,16 +1,26 @@
 <script lang="ts">
     import "$lib/styles.css";
 
-    import Layout from "$lib/components/Layout.svelte";
-    import Main from "$lib/components/Main.svelte";
-    import Nav from "$lib/components/Nav.svelte";
-    import NavLink from "$lib/components/NavLink.svelte";
-
     import { base } from "$app/paths";
     import { page } from "$app/state";
     import { setContext } from "svelte";
-    import NavGroup from "$lib/components/NavGroup.svelte";
-
+    import { Layout, Main, Nav, NavGroup, NavLink } from "$lib/index.js";
+    import {
+        Car,
+        Circle,
+        CircleDashed,
+        CircleSlash2,
+        History,
+        LayoutDashboard,
+        Lock,
+        Orbit,
+        Table2,
+        TextCursorInput,
+        User,
+        Users
+    } from "@lucide/svelte";
+    import NavGroupLink from "$lib/components/NavGroupLink.svelte";
+    import NavDivider from "$lib/components/NavDivider.svelte";
     setContext("client", "my client");
 
     let {
@@ -21,52 +31,59 @@
 </script>
 
 <Layout>
-    <Nav expandable>
-        {#snippet top()}
-            <NavLink href="{base}/" icon="planet"></NavLink>
-        {/snippet}
+    <Nav expandable expanded Icon={Car} title="Janice">
         {#snippet middle()}
             <NavLink
-                icon="dashboard"
+                Icon={LayoutDashboard}
                 label="Dashboard"
                 href="{base}/"
                 active={page.route.id === "/"}
             ></NavLink>
             <NavLink
-                icon="ballot"
+                Icon={TextCursorInput}
                 label="Forms"
                 href="{base}/forms"
                 active={page.route.id === "/forms"}
             ></NavLink>
             <NavLink
-                icon="table"
+                Icon={Table2}
                 label="Tables"
                 href="{base}/tables"
                 active={page.route.id === "/tables"}
             ></NavLink>
-            <NavGroup icon="planet" label="Planets" active={page.route.id?.startsWith("/planets")}>
-                <NavLink
-                    icon="planet"
+            <NavGroup Icon={Orbit} label="Planets" active={page.route.id?.startsWith("/planets")}>
+                <NavGroupLink
+                    Icon={Circle}
                     label="Mercury"
                     href="{base}/planets/mercury"
                     active={page.url.pathname.endsWith("/planets/mercury")}
-                ></NavLink>
-                <NavLink
-                    icon="planet"
+                ></NavGroupLink>
+                <NavGroupLink
+                    Icon={CircleDashed}
                     label="Venus"
                     href="{base}/planets/venus"
                     active={page.url.pathname.endsWith("/planets/venus")}
-                ></NavLink>
-                <NavLink
-                    icon="planet"
-                    label="Earth"
+                ></NavGroupLink>
+                <NavGroupLink
+                    Icon={CircleSlash2}
+                    label="Saturn"
                     href="{base}/planets/earth"
                     active={page.url.pathname.endsWith("/planets/earth")}
-                ></NavLink>
+                ></NavGroupLink>
             </NavGroup>
+
+            <NavDivider></NavDivider>
+
+            <NavLink Icon={Car} label="Cars"></NavLink>
+            <NavLink Icon={History} label="Logbook"></NavLink>
+
+            <NavDivider></NavDivider>
+
+            <NavLink Icon={Users} label="Users"></NavLink>
+            <NavLink Icon={Lock} label="Lock"></NavLink>
         {/snippet}
         {#snippet bottom()}
-            <NavLink icon="person" label="user"></NavLink>
+            <NavLink Icon={User} label="user"></NavLink>
         {/snippet}
     </Nav>
     <Main>

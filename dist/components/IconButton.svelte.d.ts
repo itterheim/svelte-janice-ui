@@ -1,5 +1,6 @@
+import type { Component } from "svelte";
 type $$ComponentProps = {
-    icon: string;
+    Icon: Component;
     action?: boolean;
     danger?: boolean;
     small?: boolean;
@@ -7,6 +8,6 @@ type $$ComponentProps = {
     title?: string;
     onclick?: () => void;
 };
-declare const IconButton: import("svelte").Component<$$ComponentProps, {}, "">;
+declare const IconButton: Component<$$ComponentProps, {}, "">;
 type IconButton = ReturnType<typeof IconButton>;
 export default IconButton;

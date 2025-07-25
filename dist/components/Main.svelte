@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { showMenu } from "../stores/ui.js";
+    import { showMenu } from "../stores/ui";
 
     let {
         children
@@ -8,35 +8,57 @@
     } = $props();
 </script>
 
-<main class:rounded={$showMenu}>
+<main>
     {@render children()}
+
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="overlay" onclick={() => ($showMenu = false)} class:visible={$showMenu}></div>
 </main>
 
 <style>
+    /* main section */
     main {
         position: relative;
         flex: 1;
-        background: var(--mantle);
-        border-radius: 20px 0 0 20px;
-
-        flex: 1;
-        color: var(--text);
+        border-radius: 16px 0 0 16px;
+        padding: 0 16px;
         overflow: auto;
-        box-shadow: var(--shadow);
-        padding: 0 20px 20px 20px;
+        transition: border-radius 0.2s ease;
+
+        background-color: var(--crust);
+        color: var(--text);
+    }
+
+    main div.overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #0000;
+        transition:
+            background-color 0.2s ease-in,
+            backdrop-filter 0.2s ease-in,
+            visibility 0.2s linear;
+        visibility: hidden;
     }
 
     @media (max-width: 800px) {
         main {
-            border-radius: 0;
-            padding: 0 10px 10px 10px;
-
-            min-width: 100%;
+            min-width: 100vw;
             box-sizing: border-box;
+            padding: 0 4px;
         }
 
-        main.rounded {
-            border-radius: 20px 0 0 20px;
+        main div.overlay.visible {
+            background-color: #0002;
+            visibility: visible;
+            backdrop-filter: blur(1px);
+        }
+
+        :global(nav.hidden) + main {
+            border-radius: 0;
         }
     }
 </style>

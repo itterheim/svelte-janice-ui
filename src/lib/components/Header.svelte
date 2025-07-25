@@ -1,5 +1,6 @@
 <script lang="ts">
     import { showMenu } from "$lib/stores/ui.js";
+    import { ArrowLeft, Menu } from "@lucide/svelte";
     import IconButton from "./IconButton.svelte";
 
     let {
@@ -24,9 +25,9 @@
 <header>
     <div class="left" class:default={!back}>
         {#if back}
-            <IconButton icon="arrow_back" onclick={goBack}></IconButton>
+            <IconButton Icon={ArrowLeft} onclick={goBack}></IconButton>
         {:else}
-            <IconButton icon="menu" onclick={toggleSidebar}></IconButton>
+            <IconButton Icon={Menu} onclick={toggleSidebar}></IconButton>
         {/if}
         <div class="title">
             {title}
@@ -61,19 +62,22 @@
     div.left div.title {
         font-size: var(--font-size-large);
         font-weight: 600;
-        padding-left: 10px;
+        padding-left: 8px;
     }
 
     div.right {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 4px;
     }
 
     @media (max-width: 800px) {
+        /* header {
+            height: 56px;
+        } */
         div.left.default :global(> :first-child) {
-            display: block;
+            display: flex;
         }
     }
 </style>

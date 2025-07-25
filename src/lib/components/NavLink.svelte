@@ -1,96 +1,123 @@
 <script lang="ts">
-    import { showMenu } from "$lib/stores/ui.js";
-    import Icon from "./Icon.svelte";
+    import { showMenu } from "$lib/stores/ui";
+    import { ChevronRight } from "@lucide/svelte";
+    import type { Component } from "svelte";
 
     let {
-        href,
-        icon,
+        Icon,
         label,
-        active = false,
-        gap = false,
+        href,
+        active,
+        chevron,
+        expanded,
         onclick
     }: {
+        Icon: Component;
+        label: string;
         href?: string;
-        icon: string;
-        label?: string;
         active?: boolean;
-        gap?: boolean;
+        chevron?: boolean;
+        expanded?: boolean;
         onclick?: () => void;
     } = $props();
+
+    function clicked() {
+        if (!chevron) {
+            $showMenu = false;
+        }
+        onclick?.();
+    }
 </script>
 
-<a {href} class:active class:gap onclick={() => (onclick ? onclick() : showMenu.set(false))}>
-    {#if label}
-        <div class="label">{label}</div>
-    {/if}
+<a class="nav-link" {href} onclick={clicked} class:active>
     <div class="icon">
-        <Icon {icon} />
+        <Icon />
     </div>
+    <div class="label">
+        {label}
+    </div>
+    {#if chevron}
+        <div class="chevron" class:expanded>
+            <ChevronRight size={20}></ChevronRight>
+        </div>
+    {/if}
 </a>
 
 <style>
     a {
-        position: relative;
-        display: block;
         text-decoration: none;
-        color: var(--text-dark);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         cursor: pointer;
-    }
-
-    a.gap {
-        margin-top: 40px;
-    }
-
-    a .icon {
-        position: relative;
         color: var(--text-dark);
-        font-size: 28px;
-        padding: 10px;
-        border-radius: 50%;
-        display: block;
+        font-weight: 600;
+    }
+
+    a div.icon {
         width: 24px;
         height: 24px;
-
-        transition:
-            background-color 0.3s,
-            color 0.3s;
+        padding: 8px;
+        border-radius: 50%;
     }
 
-    a:hover,
-    a:active {
-        z-index: 9999;
-    }
-
-    a:hover .icon,
-    a.active .icon {
-        background-color: var(--primary);
-        color: var(--base);
+    a:hover div.icon,
+    a.active div.icon {
+        background-color: var(--primary-dark);
+        color: var(--base-dark);
     }
 
     a div.label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        color: var(--text-dark);
-        padding: 0 20px 0 64px;
-        border-radius: 50px;
-        font-size: var(--font-size-larger);
-        font-weight: 600;
-        display: flex;
+        display: none;
         align-items: center;
-        visibility: hidden;
-        opacity: 0;
+        padding: 0 16px;
+        white-space: nowrap;
     }
 
-    a:hover div.label,
-    a:active div.label {
-        visibility: visible;
-        opacity: 1;
-        background-color: var(--primary);
-        color: var(--base);
-        transition:
-            opacity 0.3s,
-            visibility 0.3s;
+    a div.chevron {
+        display: none;
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+        transform: rotate(180deg);
+        transition: transform 0.2s ease;
+    }
+
+    a div.chevron.expanded {
+        transform: rotate(90deg);
+    }
+
+    :global(nav.narrow) a:hover div.icon {
+        border-radius: 50% 0 0 50%;
+    }
+
+    :global(nav.narrow) a:hover div.label {
+        display: flex;
+        align-self: stretch;
+        border-radius: 0 20px 20px 0;
+        background-color: var(--primary-dark);
+        color: var(--base-dark);
+    }
+
+    :global(nav.expanded) a div.label {
+        display: flex;
+        flex: 1;
+        color: var(--text-dark);
+        padding-left: 24px;
+    }
+
+    :global(nav.expanded) a:hover div.label,
+    :global(nav.expanded) a:hover div.chevron,
+    :global(nav.expanded) a.active div.label,
+    :global(nav.expanded) a.active div.chevron {
+        color: var(--primary-dark);
+    }
+
+    :global(nav.expanded) a div.chevron {
+        display: block;
+    }
+
+    :global(nav.expanded) a.active div.label {
+        font-weight: 700;
     }
 </style>

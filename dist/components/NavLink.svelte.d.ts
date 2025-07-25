@@ -1,11 +1,13 @@
+import type { Component } from "svelte";
 type $$ComponentProps = {
+    Icon: Component;
+    label: string;
     href?: string;
-    icon: string;
-    label?: string;
     active?: boolean;
-    gap?: boolean;
+    chevron?: boolean;
+    expanded?: boolean;
     onclick?: () => void;
 };
-declare const NavLink: import("svelte").Component<$$ComponentProps, {}, "">;
+declare const NavLink: Component<$$ComponentProps, {}, "">;
 type NavLink = ReturnType<typeof NavLink>;
 export default NavLink;

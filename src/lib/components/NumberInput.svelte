@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Minus, Plus } from "@lucide/svelte";
     import IconButton from "./IconButton.svelte";
     import Input from "./Input.svelte";
 
@@ -28,12 +29,12 @@
         {#snippet right()}
             {#if step}
                 <IconButton
-                    icon="remove"
+                    Icon={Minus}
                     onclick={() => (value = Math.max(value - step, min ?? -Infinity))}
                     grey
                 ></IconButton>
                 <IconButton
-                    icon="add"
+                    Icon={Plus}
                     onclick={() => (value = Math.min(value + step, max ?? Infinity))}
                     grey
                 ></IconButton>

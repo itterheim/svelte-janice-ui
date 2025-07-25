@@ -4,26 +4,26 @@
     import IconButton from "$lib/components/IconButton.svelte";
     import Wrapper from "$lib/components/Wrapper.svelte";
     import Table from "$lib/components/Table.svelte";
-    import Icon from "$lib/components/Icon.svelte";
-    import Input from "$lib/components/Input.svelte";
     import Select from "$lib/components/Select.svelte";
     import Row from "$lib/components/Row.svelte";
     import type { PageProps } from "./$types.js";
+    import { Funnel, Pencil, Plus, Trash2 } from "@lucide/svelte";
 
     let { data }: PageProps = $props();
 
+    // eslint-disable-next-line svelte/no-inspect
     $inspect(data);
 </script>
 
 <Wrapper>
     <Header title="Tables" back>
-        <IconButton icon="add" action />
-        <IconButton icon="delete" danger />
+        <IconButton Icon={Plus} />
+        <IconButton Icon={Trash2} />
     </Header>
 
     <Card title="Table">
         {#snippet actions()}
-            <IconButton icon="filter_alt" small />
+            <IconButton Icon={Funnel} small />
         {/snippet}
 
         <Row padding>
@@ -50,7 +50,7 @@
                     <td>Row 1, Cell 2</td>
                     <td>Row 1, Cell 3</td>
                     <td>
-                        <Icon icon="edit" small />
+                        <IconButton Icon={Pencil} small></IconButton>
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +58,7 @@
                     <td>Row 2, Cell 2</td>
                     <td>Row 2, Cell 3</td>
                     <td>
-                        <Icon icon="edit" small />
+                        <IconButton Icon={Pencil} small></IconButton>
                     </td>
                 </tr>
             </tbody>

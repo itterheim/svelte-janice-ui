@@ -12,14 +12,15 @@
     import NumberInput from "$lib/components/NumberInput.svelte";
     import DateInput from "$lib/components/DateInput.svelte";
     import DateTimeInput from "$lib/components/DateTimeInput.svelte";
+    import { EllipsisVertical, Plus, Trash2 } from "@lucide/svelte";
 
     let date = $state(new Date().toISOString());
 </script>
 
 <Wrapper>
     <Header title="Title">
-        <IconButton icon="add" action />
-        <IconButton icon="delete" danger />
+        <IconButton Icon={Plus} action />
+        <IconButton Icon={Trash2} danger />
     </Header>
 
     <div class="filter">
@@ -32,9 +33,9 @@
 
     <Card title="Card" padding>
         {#snippet actions()}
-            <IconButton icon="more_vert" small />
-            <IconButton icon="add" small />
-            <IconButton icon="delete" small />
+            <IconButton Icon={EllipsisVertical} small />
+            <IconButton Icon={Plus} small />
+            <IconButton Icon={Trash2} small />
         {/snippet}
 
         <Row margin>

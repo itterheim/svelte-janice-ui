@@ -1,10 +1,10 @@
 <script lang="ts">
-    import Icon from "./Icon.svelte";
+    import type { Component } from "svelte";
 
     let {
         submit,
         label,
-        icon,
+        Icon,
         onclick,
         action,
         danger,
@@ -12,7 +12,7 @@
     }: {
         submit?: boolean;
         label: string;
-        icon?: string;
+        Icon?: Component;
         onclick?: () => void;
         action?: boolean;
         danger?: boolean;
@@ -21,8 +21,8 @@
 </script>
 
 <button type={submit ? "submit" : "button"} class:action class:danger class:small {onclick}>
-    {#if icon}
-        <Icon {icon} />
+    {#if Icon}
+        <Icon />
     {/if}
     {label}
 </button>

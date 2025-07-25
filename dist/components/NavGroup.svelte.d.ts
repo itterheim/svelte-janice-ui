@@ -1,9 +1,10 @@
+import { type Component } from "svelte";
 type $$ComponentProps = {
-    icon: string;
+    Icon: Component;
     label: string;
     active?: boolean;
     children: () => any;
 };
-declare const NavGroup: import("svelte").Component<$$ComponentProps, {}, "">;
+declare const NavGroup: Component<$$ComponentProps, {}, "">;
 type NavGroup = ReturnType<typeof NavGroup>;
 export default NavGroup;

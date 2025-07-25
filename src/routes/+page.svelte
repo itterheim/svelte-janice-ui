@@ -6,12 +6,13 @@
     import IconButton from "$lib/components/IconButton.svelte";
     import Wrapper from "$lib/components/Wrapper.svelte";
     import Row from "$lib/components/Row.svelte";
+    import { EllipsisVertical, RefreshCcw } from "@lucide/svelte";
 </script>
 
 <Wrapper>
     <Header title="Title">
-        <IconButton icon="refresh" />
-        <IconButton icon="more_vert" />
+        <IconButton Icon={RefreshCcw} />
+        <IconButton Icon={EllipsisVertical} />
     </Header>
 
     <Row>

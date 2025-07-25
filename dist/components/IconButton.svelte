@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Icon from "./Icon.svelte";
+    import type { Component } from "svelte";
 
     let {
-        icon,
+        Icon,
         action,
         danger,
         small,
@@ -10,7 +10,7 @@
         title,
         onclick
     }: {
-        icon: string;
+        Icon: Component;
         action?: boolean;
         danger?: boolean;
         small?: boolean;
@@ -21,7 +21,11 @@
 </script>
 
 <button {title} {onclick} class:grey class:action class:danger class:small>
-    <Icon {icon} {small}></Icon>
+    {#if small}
+        <Icon size={20}></Icon>
+    {:else}
+        <Icon></Icon>
+    {/if}
 </button>
 
 <style>
@@ -45,8 +49,8 @@
     }
 
     button.small {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 
     button:hover {
@@ -62,6 +66,7 @@
         color: var(--base);
         transition: ease-in-out 0.2s filter;
         box-shadow: 1px 1px 3px 0px #0002;
+        border: none;
     }
 
     button.danger {
@@ -69,6 +74,7 @@
         color: var(--base);
         transition: ease-in-out 0.2s filter;
         box-shadow: 1px 1px 3px 0px #0002;
+        border: none;
     }
 
     button.action:hover,

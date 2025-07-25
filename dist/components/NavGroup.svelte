@@ -1,64 +1,67 @@
 <script lang="ts">
+    import { type Component } from "svelte";
     import NavLink from "./NavLink.svelte";
 
     let {
-        icon,
+        Icon,
         label,
         active,
         children
     }: {
-        icon: string;
+        Icon: Component;
         label: string;
         active?: boolean;
         children: () => any;
     } = $props();
 
-    let visible = $state(active);
+    let expanded = $state(active);
 </script>
 
-<div class="nav-group">
-    <NavLink {icon} {label} {active} onclick={() => (visible = !visible)}></NavLink>
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="links" class:visible onclick={() => (visible = true)}>
+<div class="nav-group" class:expanded>
+    <NavLink {Icon} {label} {active} onclick={() => (expanded = !expanded)} chevron {expanded}
+    ></NavLink>
+    <div class="links">
         {@render children()}
     </div>
 </div>
 
 <style>
     div.nav-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 22px;
-        background-color: var(--crust-dark);
+        position: relative;
+        border-radius: 0;
+        transition:
+            background-color 0.2s ease,
+            border-radius 0.2s ease;
     }
     div.links {
         display: none;
-    }
-    div.links.visible {
-        display: flex;
         flex-direction: column;
-        gap: 10px;
-    }
-    div.links :global(a div.icon),
-    div.links :global(a div.label) {
-        color: var(--subtext0-dark);
-    }
-    div.links :global(a.active div.icon),
-    div.links :global(a:hover div.icon),
-    div.links :global(a.active div.label),
-    div.links :global(a:hover div.label) {
-        color: var(--base);
+        gap: 4px;
+        padding-top: 4px;
     }
 
-    div.links :global(a div.icon span) {
-        transition: none;
+    div.expanded div.links {
+        display: flex;
     }
 
-    div.links :global(a:hover div.icon),
-    div.links :global(a:hover div.label),
-    div.links :global(a.active div.icon) {
-        background-color: var(--overlay2);
+    div.nav-group :global(a.nav-group-link:last-child) {
+        margin-bottom: 4px;
+    }
+
+    div.nav-group::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 100%;
+        background-color: var(--crust-dark);
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    :global(nav.narrow) div.nav-group.expanded::before {
+        opacity: 1;
     }
 </style>

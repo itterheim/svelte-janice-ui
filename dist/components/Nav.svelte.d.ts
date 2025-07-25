@@ -1,10 +1,13 @@
+import type { Component } from "svelte";
 type $$ComponentProps = {
+    expanded?: boolean;
     expandable?: boolean;
-    changetheme?: boolean;
-    top?: () => any;
-    middle?: () => any;
+    expandedWidth?: number;
+    Icon: Component;
+    title: string;
+    middle: () => any;
     bottom?: () => any;
 };
-declare const Nav: import("svelte").Component<$$ComponentProps, {}, "">;
+declare const Nav: Component<$$ComponentProps, {}, "">;
 type Nav = ReturnType<typeof Nav>;
 export default Nav;
