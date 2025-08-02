@@ -53,13 +53,13 @@
     .input {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
     }
 
     .field {
         display: flex;
         flex-direction: row;
-        gap: 5px;
+        gap: 4px;
     }
 
     .field input {
@@ -74,8 +74,8 @@
 
     input {
         font-size: var(--font-size);
-        padding: 10px;
-        border-radius: 5px;
+        padding: 8px;
+        border-radius: 4px;
         border: 1px solid var(--border-color);
         background-color: var(--base);
         color: var(--text);

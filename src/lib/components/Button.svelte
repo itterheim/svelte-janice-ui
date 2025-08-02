@@ -13,7 +13,7 @@
         submit?: boolean;
         label: string;
         Icon?: Component;
-        onclick?: () => void;
+        onclick?: (e: Event) => void;
         action?: boolean;
         danger?: boolean;
         small?: boolean;
@@ -37,8 +37,8 @@
 
         /* width: 40px; */
         height: 40px;
-        border-radius: 5px;
-        padding: 0 14px;
+        border-radius: 4px;
+        padding: 0 16px;
         font-size: var(--font-size);
         font-family: "Open Sans", sans-serif;
         font-weight: 600;
@@ -54,9 +54,8 @@
     }
 
     button.small {
-        /* width: 28px; */
         height: 28px;
-        padding: 0 10px;
+        padding: 0 8px;
     }
 
     button:hover {
@@ -83,5 +82,13 @@
     button.action:hover,
     button.danger:hover {
         filter: brightness(1.1);
+    }
+
+    button :global(svg) {
+        margin-right: 16px;
+    }
+
+    button.small :global(svg) {
+        margin-right: 8px;
     }
 </style>

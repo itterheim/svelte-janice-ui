@@ -1,28 +1,26 @@
 <script lang="ts">
     import "$lib/styles.css";
 
-    import { base } from "$app/paths";
+    import { resolve } from "$app/paths";
     import { page } from "$app/state";
     import { setContext } from "svelte";
-    import { Layout, Main, Nav, NavGroup, NavLink } from "$lib/index.js";
+    import { Janice, Main, Nav, NavDivider, NavGroup, NavGroupLink, NavLink } from "$lib/index.js";
     import {
         Car,
         Circle,
         CircleDashed,
         CircleSlash2,
         Expand,
-        History,
         LayoutDashboard,
         Lock,
         Minimize,
         Orbit,
+        SplitSquareVertical,
         Table2,
         TextCursorInput,
         User,
         Users
     } from "@lucide/svelte";
-    import NavGroupLink from "$lib/components/NavGroupLink.svelte";
-    import NavDivider from "$lib/components/NavDivider.svelte";
     import { browser } from "$app/environment";
     setContext("client", "my client");
 
@@ -48,52 +46,53 @@
     }
 </script>
 
-<Layout>
+<Janice>
     <Nav expandable expanded Icon={Car} title="Janice">
         {#snippet middle()}
             <NavLink
                 Icon={LayoutDashboard}
                 label="Dashboard"
-                href="{base}/"
+                href={resolve("/")}
                 active={page.route.id === "/"}
             ></NavLink>
             <NavLink
                 Icon={TextCursorInput}
                 label="Forms"
-                href="{base}/forms"
+                href={resolve("/forms")}
                 active={page.route.id === "/forms"}
             ></NavLink>
             <NavLink
                 Icon={Table2}
                 label="Tables"
-                href="{base}/tables"
+                href={resolve("/tables")}
                 active={page.route.id === "/tables"}
+            ></NavLink>
+            <NavLink
+                Icon={SplitSquareVertical}
+                label="Horizontal layout"
+                href={resolve("/horizontal")}
+                active={page.url.pathname.includes("/horizontal")}
             ></NavLink>
             <NavGroup Icon={Orbit} label="Planets" active={page.route.id?.startsWith("/planets")}>
                 <NavGroupLink
                     Icon={Circle}
                     label="Mercury"
-                    href="{base}/planets/mercury"
+                    href={resolve("/planets/mercury")}
                     active={page.url.pathname.endsWith("/planets/mercury")}
                 ></NavGroupLink>
                 <NavGroupLink
                     Icon={CircleDashed}
                     label="Venus"
-                    href="{base}/planets/venus"
+                    href={resolve("/planets/venus")}
                     active={page.url.pathname.endsWith("/planets/venus")}
                 ></NavGroupLink>
                 <NavGroupLink
                     Icon={CircleSlash2}
                     label="Saturn"
-                    href="{base}/planets/earth"
+                    href={resolve("/planets/earth")}
                     active={page.url.pathname.endsWith("/planets/earth")}
                 ></NavGroupLink>
             </NavGroup>
-
-            <NavDivider></NavDivider>
-
-            <NavLink Icon={Car} label="Cars"></NavLink>
-            <NavLink Icon={History} label="Logbook"></NavLink>
 
             <NavDivider></NavDivider>
 
@@ -113,4 +112,4 @@
     <Main>
         {@render children()}
     </Main>
-</Layout>
+</Janice>
