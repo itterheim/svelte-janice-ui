@@ -26,11 +26,11 @@
     }
 
     .margin {
-        margin: 0 0 10px 0;
+        margin: 0 0 8px 0;
     }
 
     .padding {
-        padding: 10px;
+        padding: 8px;
     }
 
     @media (max-width: 800px) {

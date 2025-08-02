@@ -3,7 +3,7 @@ type $$ComponentProps = {
     submit?: boolean;
     label: string;
     Icon?: Component;
-    onclick?: () => void;
+    onclick?: (e: Event) => void;
     action?: boolean;
     danger?: boolean;
     small?: boolean;

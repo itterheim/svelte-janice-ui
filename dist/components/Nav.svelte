@@ -145,7 +145,7 @@
         flex: 1;
         padding: 0 8px 0 24px;
         font-weight: 600;
-        font-size: 18px;
+        font-size: var(--font-size-large);
     }
 
     nav div.top div.expand {
@@ -172,6 +172,9 @@
     /* the bottom part, for user and setting for example */
     nav div.bottom {
         margin-top: 16px;
+        gap: 4px;
+        display: flex;
+        flex-direction: column;
     }
 
     /* expanded navigation */

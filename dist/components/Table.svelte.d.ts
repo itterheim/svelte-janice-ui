@@ -1,5 +1,5 @@
 type $$ComponentProps = {
-    pagination?: boolean;
+    sticky?: boolean;
     children: () => any;
 };
 declare const Table: import("svelte").Component<$$ComponentProps, {}, "">;

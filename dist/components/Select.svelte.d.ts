@@ -2,7 +2,6 @@ type $$ComponentProps = {
     name: string;
     value?: string;
     label?: string;
-    placeholder?: string;
     disabled?: boolean;
     required?: boolean;
     onchange?: () => void;

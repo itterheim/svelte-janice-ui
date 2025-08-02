@@ -8,12 +8,12 @@
     } = $props();
 </script>
 
-<div class="layout {$theme}">
+<div class="janice {$theme}">
     {@render children()}
 </div>
 
 <style>
-    div.layout {
+    div.janice {
         position: relative;
         display: flex;
         flex-direction: row;
