@@ -6,7 +6,7 @@ type $$ComponentProps = {
     small?: boolean;
     grey?: boolean;
     title?: string;
-    onclick?: () => void;
+    onclick?: (e: Event) => void;
 };
 declare const IconButton: Component<$$ComponentProps, {}, "">;
 type IconButton = ReturnType<typeof IconButton>;

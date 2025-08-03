@@ -53,7 +53,7 @@
         align-items: center;
         justify-content: space-between;
         height: 64px;
-        /* margin-bottom: 10px; */
+        padding: 0 16px;
     }
 
     div.left {

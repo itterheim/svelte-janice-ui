@@ -67,10 +67,8 @@
 
 <style>
     div.card {
-        border: 1px solid var(--border-color);
         border-radius: 8px;
         overflow: clip;
-        box-shadow: 1px 1px 3px 0px #0002;
         background-color: var(--base);
         display: flex;
         flex-direction: column;
@@ -81,12 +79,12 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid var(--border-color);
+        /* border-bottom: 1px solid var(--crust); */
         padding: 8px 0;
     }
 
     div.title {
-        padding: 8px 16px;
+        padding: 4px 16px;
         font-weight: 600;
         font-size: var(--font-size-larger);
     }
@@ -111,8 +109,8 @@
         gap: 8px;
         align-items: flex-end;
         padding: 16px;
-        border-bottom: 1px solid var(--border-color);
-        background-color: var(--crust);
+        /* border-bottom: 1px solid var(--border-color); */
+        background-color: var(--mantle);
     }
 
     div.content {
@@ -129,7 +127,8 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        border-top: 1px solid var(--border-color);
+        /* border-top: 1px solid var(--border-color); */
+        border-top: 1px solid var(--crust);
         padding: 8px;
         gap: 8px;
     }

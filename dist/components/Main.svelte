@@ -22,7 +22,6 @@
         position: relative;
         flex: 1;
         border-radius: 16px 0 0 16px;
-        padding: 0 16px 16px 16px;
         overflow: auto;
         transition: border-radius 0.2s ease;
 
@@ -48,7 +47,6 @@
         main {
             min-width: 100vw;
             box-sizing: border-box;
-            padding: 0 4px 4px 4px;
         }
 
         main div.overlay.visible {

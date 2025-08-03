@@ -46,6 +46,7 @@
         gap: 8px;
         visibility: hidden;
         overflow: hidden;
+        padding: 0 16px 16px 16px;
     }
 
     div.horizontal.visible {

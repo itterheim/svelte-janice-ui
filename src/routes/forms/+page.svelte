@@ -4,7 +4,6 @@
     import Card from "$lib/components/Card.svelte";
     import Header from "$lib/components/Header.svelte";
     import IconButton from "$lib/components/IconButton.svelte";
-    import Wrapper from "$lib/components/Wrapper.svelte";
     import Input from "$lib/components/Input.svelte";
     import Row from "$lib/components/Row.svelte";
     import Button from "$lib/components/Button.svelte";
@@ -13,11 +12,12 @@
     import DateInput from "$lib/components/DateInput.svelte";
     import DateTimeInput from "$lib/components/DateTimeInput.svelte";
     import { EllipsisVertical, Plus, Trash2 } from "@lucide/svelte";
+    import LayoutVertical from "$lib/components/LayoutVertical.svelte";
 
     let date = $state(new Date().toISOString());
 </script>
 
-<Wrapper>
+<LayoutVertical narrow>
     <Header title="Title">
         <IconButton Icon={Plus} action />
         <IconButton Icon={Trash2} danger />
@@ -79,9 +79,8 @@
 
         {#snippet buttons()}
             <Button label="Button" />
-            <Button label="Action" action small />
             <Button label="Action" action />
             <Button label="Danger" danger />
         {/snippet}
     </Card>
-</Wrapper>
+</LayoutVertical>

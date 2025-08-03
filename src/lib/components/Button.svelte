@@ -66,7 +66,6 @@
         background-color: var(--primary);
         color: var(--base);
         transition: ease-in-out 0.2s filter;
-        box-shadow: 1px 1px 3px 0px #0002;
         border: 1px solid transparent;
     }
 
@@ -74,7 +73,6 @@
         background-color: var(--red);
         color: var(--base);
         transition: ease-in-out 0.2s filter;
-        box-shadow: 1px 1px 3px 0px #0002;
         font-weight: 700;
         border: 1px solid transparent;
     }

@@ -42,6 +42,10 @@
         border-bottom: 1px solid var(--border-color);
     }
 
+    table.janice-table :global(> tbody > tr:last-child > td) {
+        border-bottom: none;
+    }
+
     table.janice-table :global(> thead > tr > th:first-child),
     table.janice-table :global(> tbody > tr > td:first-child) {
         padding-left: 16px;

@@ -13,6 +13,7 @@
         Expand,
         LayoutDashboard,
         Lock,
+        MapIcon,
         Minimize,
         Orbit,
         SplitSquareVertical,
@@ -72,6 +73,12 @@
                 label="Horizontal layout"
                 href={resolve("/horizontal")}
                 active={page.url.pathname.includes("/horizontal")}
+            ></NavLink>
+            <NavLink
+                Icon={MapIcon}
+                label="Leaflet map"
+                href={resolve("/map")}
+                active={page.url.pathname.includes("/map")}
             ></NavLink>
             <NavGroup Icon={Orbit} label="Planets" active={page.route.id?.startsWith("/planets")}>
                 <NavGroupLink
